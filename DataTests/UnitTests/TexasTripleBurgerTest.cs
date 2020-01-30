@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
 namespace CowboyCafe.DataTests
 {
     public class TexasTripleBurgerTest
@@ -161,4 +160,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
