@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Zombiepaladin
+ * Edited By: Tayler Stoppel
+ * Class: Side.cs
+ * Purpose: A side class for the cowboy cafe project
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

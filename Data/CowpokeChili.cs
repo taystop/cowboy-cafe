@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Zombiepaladin
+ * Editid
+ * Class: CowpokeChili.cs
+ * Purpose: An entree object class for the cowboy cafe project
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
