@@ -151,5 +151,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Converts The object to a string
+        /// </summary>
+        /// <returns>The string "Texas Triple Burger"</returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
     }
 }

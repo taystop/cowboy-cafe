@@ -10,15 +10,33 @@
         <Style TargetType="Button">
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Background" Value="ForestGreen"/>
-            <Setter Property="Foreground" Value="Aquamarine"/>
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name ="border" CornerRadius="20" Background="DarkGray" BorderThickness="2" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border"  Property="BorderBrush" Value="Blue"/>
+                                <Setter Property="Foreground" Value="Blue"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="BlanchedAlmond"/>
-        </Style>
+
+
     </UserControl.Resources>
+
     <Grid x:Name="OrderControlGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -28,31 +46,38 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <TextBlock>Entrees</TextBlock>
-            <Button Name="AddAngryChickenButton">Angry Chicken</Button>
-            <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
-            <Button Name="AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
-            <Button Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
-            <Button Name="AddRustlersRibsButton">Rustler's Rib</Button>
-            <Button Name="AddTexasTripleBurgerButton">Texas Triple Burger</Button>
-            <Button Name="AddTrailBurgerButton">Trail Burger</Button>
+            <TextBlock FontSize="30" TextAlignment="Center" Foreground="DarkGray" FontWeight="Bold">Entrees</TextBlock>
+            <Button Name="AddAngryChickenButton" Click="AddAngryChickenButton_Click">Angry Chicken</Button>
+            <Button Name="AddCowpokeChiliButton" Click="AddCowpokeChiliButton_Click">Cowpoke Chili</Button>
+            <Button Name="AddDakotaDoubleBurgerButton" Click="AddDakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
+            <Button Name="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
+            <Button Name="AddRustlersRibsButton" Click="AddRustlersRibsButton_Click">Rustler's Rib</Button>
+            <Button Name="AddTexasTripleBurgerButton" Click="AddTexasTripleBurgerButton_Click">Texas Triple Burger</Button>
+            <Button Name="AddTrailBurgerButton" Click="AddTrailBurgerButton_Click">Trail Burger</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock>Sides</TextBlock>
-            <Button Name="AddBakedBeansButton">Baked Beans</Button>
-            <Button Name="AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
+            <TextBlock FontSize="30" TextAlignment="Center" Foreground="DarkGray" FontWeight="Bold">Sides</TextBlock>
+            <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Click">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFriesButton" Click="AddChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
+            <Button Name="AddCornDodgersButton" Click="AddCornDodgersButton_Click">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Click">Pan de Campo</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock>Drinks</TextBlock>
-            <Button Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
-            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
-            <Button Name="AddTexasTeaButton">Texas Tea</Button>
-            <Button Name="AddWaterButton">Water</Button>
+            <TextBlock FontSize="30" TextAlignment="Center" Foreground="DarkGray" FontWeight="Bold">Drinks</TextBlock>
+            <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Click">Cowboy Coffee</Button>
+            <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Click">Jerked Soda</Button>
+            <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
+            <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
         </StackPanel>
-        
+
+        <StackPanel Grid.Column="4">
+            <TextBlock FontSize="30" TextAlignment="Center" Foreground="DarkGray" FontWeight="Bold">Orders</TextBlock>
+            <ListView Name="OrderList" Background="BlueViolet" Foreground="AntiqueWhite" TextElement.FontSize="25">
+                
+            </ListView>
+        </StackPanel>
+
     </Grid>
 </UserControl>

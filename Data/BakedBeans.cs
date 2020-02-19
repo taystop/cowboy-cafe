@@ -55,5 +55,15 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Converts object to a string
+        /// </summary>
+        /// <returns>the size of the side and it's name</returns>
+        public override string ToString()
+        {
+            string order = Size.ToString() + " Baked Beans";
+            return order;
+        }
     }
 }
