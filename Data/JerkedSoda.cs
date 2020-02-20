@@ -76,5 +76,34 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string
+        /// </summary>
+        /// <returns>A string containing the size and flavor of the soda.</returns>
+        public override string ToString()
+        {
+            string over = Size.ToString();
+            switch (Flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    over += " Birch Beer";
+                    break;
+                case SodaFlavor.CreamSoda:
+                    over += " Cream Soda";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    over += " Orange Soda";
+                    break;
+                case SodaFlavor.RootBeer:
+                    over += " Root Beer";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    over += " Sarsparilla";
+                    break;
+            }
+            over += " Jerked Soda";
+            return over;
+        }
     }
 }

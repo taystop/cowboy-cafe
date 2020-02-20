@@ -117,5 +117,22 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Converts object to a string
+        /// </summary>
+        /// <returns>A string with the size of the tea.</returns>
+        public override string ToString()
+        {
+            string order = "";
+            order += Size.ToString();
+            order += " Texas ";
+            if (sweet)
+                order += "Sweet ";
+            else
+                order += "Plain ";
+            order += "Tea";
+            return order;
+        }
     }
 }

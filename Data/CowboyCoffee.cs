@@ -100,5 +100,18 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string
+        /// </summary>
+        /// <returns>The size of coffee and if it's decaf as a string</returns>
+        public override string ToString()
+        {
+            string over = Size.ToString();
+            if (decaf)
+                over += " Decaf";
+            over += " Cowboy Coffee";
+            return over;
+        }
     }
 }

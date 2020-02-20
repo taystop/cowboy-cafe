@@ -55,5 +55,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string
+        /// </summary>
+        /// <returns>The size followed by "Chili Cheese Fries" as a string</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Chili Cheese Fries";
+        }
     }
 }
