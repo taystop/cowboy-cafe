@@ -12,11 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{A1640083-74C6-4479-B826-09908616968B}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Downloads\UML Diagrams.pdf = ..\..\..\..\Downloads\UML Diagrams.pdf
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{612282A5-B0F1-4246-BC59-81B706509EA5}"
 EndProject
 Global
