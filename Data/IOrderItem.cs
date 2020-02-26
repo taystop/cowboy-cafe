@@ -14,11 +14,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of the item.
         /// </summary>
-        abstract double Price { get; }
+        double Price { get; }
 
         /// <summary>
         /// Special instructions for the item.
         /// </summary>
-        abstract List<string> SpecialInstructions { get; }
+        List<string> SpecialInstructions { get; }
     }
 }

@@ -74,6 +74,7 @@
         <StackPanel Grid.Column="3" Background="#cb7121">
             <TextBlock FontSize="40" FontFamily="Onyx" TextAlignment="Center" Foreground="#471c1c" FontWeight="ExtraBold">Order</TextBlock>
             <ListView Name="OrderList" Background="#dda384" Foreground="#471c1c" TextElement.FontSize="35" TextElement.FontFamily="Playbill" FontWeight="Bold"/>
+            <local:OrderSummaryControl x:Name="OrderSummaryControl"/>
         </StackPanel>
 
     </Grid>
