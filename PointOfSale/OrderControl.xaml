@@ -5,17 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="720" d:DesignWidth="1280">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="50"/>
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontSize" Value="27"/>
             <Setter Property="Margin" Value="8"/>
             <Setter Property="FontFamily" Value="Playbill"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name ="border" CornerRadius="20" Background="#743d20" BorderThickness="2" Padding="2">
+                        <Border x:Name ="border" CornerRadius="20" Background="#743d20" BorderThickness="2" Padding=".5">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -32,50 +33,33 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-
     </UserControl.Resources>
 
-    <Grid x:Name="OrderControlGrid" >
+    <Grid x:Name="OrderControlGrid" Background="#cb7121" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="1.25*"/>
+            <ColumnDefinition Width=".5*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Background="#cb7121">
-            <TextBlock FontSize="40" FontFamily="Onyx" TextAlignment="Center" Foreground="#471c1c" FontWeight="ExtraBold">Entrees</TextBlock>
-            <Button Name="AddAngryChickenButton" Click="AddAngryChickenButton_Click">Angry Chicken</Button>
-            <Button Name="AddCowpokeChiliButton" Click="AddCowpokeChiliButton_Click">Cowpoke Chili</Button>
-            <Button Name="AddDakotaDoubleBurgerButton" Click="AddDakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
-            <Button Name="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
-            <Button Name="AddRustlersRibsButton" Click="AddRustlersRibsButton_Click">Rustler's Rib</Button>
-            <Button Name="AddTexasTripleBurgerButton" Click="AddTexasTripleBurgerButton_Click">Texas Triple Burger</Button>
-            <Button Name="AddTrailBurgerButton" Click="AddTrailBurgerButton_Click">Trail Burger</Button>
-        </StackPanel>
+        <local:MenuItemSelectionControl x:Name="MenuItemSelection" Grid.Column="0"/>
 
-        <StackPanel Grid.Column="1" Background="#cb7121">
-            <TextBlock FontSize="40" FontFamily="Onyx" TextAlignment="Center" Foreground="#471c1c" FontWeight="ExtraBold">Sides</TextBlock>
-            <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Click">Baked Beans</Button>
-            <Button Name="AddChiliCheeseFriesButton" Click="AddChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgersButton" Click="AddCornDodgersButton_Click">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Click">Pan de Campo</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="2" Background="#cb7121">
-            <TextBlock FontSize="40" FontFamily="Onyx" TextAlignment="Center" Foreground="#471c1c" FontWeight="ExtraBold">Drinks</TextBlock>
-            <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Click">Cowboy Coffee</Button>
-            <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Click">Jerked Soda</Button>
-            <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
-            <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="3" Background="#cb7121">
-            <TextBlock FontSize="40" FontFamily="Onyx" TextAlignment="Center" Foreground="#471c1c" FontWeight="ExtraBold">Order</TextBlock>
-            <ListView Name="OrderList" Background="#dda384" Foreground="#471c1c" TextElement.FontSize="35" TextElement.FontFamily="Playbill" FontWeight="Bold"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
             <local:OrderSummaryControl x:Name="OrderSummaryControl"/>
-        </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="SelectMenuItemBtn">Select Menu Item</Button>
+                <Button Grid.Column="1" x:Name="CancelOrderBtn" Click="CancelOrderBtn_Click">Cancel Order</Button>
+                <Button Grid.Column="2" x:Name="CompleteOrderBtn" Click="CompleteOrderBtn_Click">Complete Order</Button>
+            </Grid>
+        </Grid>
 
     </Grid>
 </UserControl>

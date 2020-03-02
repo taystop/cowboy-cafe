@@ -5,10 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <ListView ItemsSource="{Binding Path=OrderNumber, StringFormat='Order {0}'}" Background="#cb7121">
-        <TextBlock Height="50" Width="60" FontWeight="Bold"
-                   Text ="{Binding}" FontSize="40" 
-                   FontFamily="Onyx" HorizontalAlignment="Left"/>
-    </ListView>
+             d:DesignHeight="720" d:DesignWidth="800">
+    <Grid Background="#cb7121">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Height="50" Width="100" Foreground="#471c1c" FontWeight="Bold" FontSize="40" FontFamily="Onyx" 
+                       HorizontalAlignment="Left" Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}"/>
+            <ListView x:Name="OrderItemsSummary" ItemsSource="{Binding Path=Items}" Grid.Row="1" Background="#cb7121" BorderThickness="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Text="{Binding}" FontWeight="Bold" HorizontalAlignment="Left" FontFamily="Onyx" TextAlignment="Left" FontSize="25" Grid.Column="0"/>
+                                <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize="25" FontFamily="Onyx" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Bold" Grid.Column="1"/>
+                            </Grid>
+                            
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="10" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid x:Name="SubtotalBox" Grid.Row="1" Height="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Subtotal" Foreground="#471c1c" FontWeight="Bold" FontSize="40" FontFamily="Onyx" Height="60"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=' {0:c}'}" Foreground="#471c1c" FontWeight="Bold" FontSize="40" FontFamily="Onyx"/>
+        </Grid>
+    </Grid>
 </UserControl>

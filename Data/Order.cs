@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Static variable holding the value of the last used order number.
         /// </summary>
-        private static uint LastOrderNumber = 0;
+        private static uint LastOrderNumber = 1;
 
         /// <summary>
         /// The items in the order.
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
                 subtotal += item.Price;
                 items.Add(item);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
         }
 
@@ -74,7 +74,7 @@ namespace CowboyCafe.Data
                 subtotal -= item.Price;
                 items.Remove(item);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
         }
     }

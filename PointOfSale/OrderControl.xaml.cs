@@ -22,82 +22,21 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            OrderControlGrid.Background = Brushes.BlueViolet;
+            var data = new Order();
+            data.Add(new AngryChicken() { Bread = false, Pickle = false});
+            data.Add(new TexasTea() { Ice = false });
+            data.Add(new TrailBurger() { Bun = false });
+            this.DataContext = data;
         }
 
-        private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
+        private void CancelOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new AngryChicken());
+            this.DataContext = new Order();
         }
 
-        private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
+        private void CompleteOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowpokeChili());
-        }
-
-        private void AddDakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new DakotaDoubleBurger());
-        }
-
-        private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new PecosPulledPork());
-        }
-
-        private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new RustlersRibs());
-        }
-
-        private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TexasTripleBurger());
-        }
-
-        private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TrailBurger());
-        }
-
-        private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new BakedBeans());
-        }
-
-        private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new ChiliCheeseFries());
-        }
-
-        private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new CornDodgers());
-        }
-
-        private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new PanDeCampo());
-        }
-
-        private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new CowboyCoffee());
-        }
-
-        private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new JerkedSoda());
-        }
-
-        private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TexasTea());
-        }
-
-        private void AddWaterButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new Water());
+            this.DataContext = new Order();
         }
     }
 }
