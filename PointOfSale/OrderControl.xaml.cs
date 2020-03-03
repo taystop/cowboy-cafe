@@ -23,9 +23,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             var data = new Order();
-            data.Add(new AngryChicken() { Bread = false, Pickle = false});
-            data.Add(new TexasTea() { Ice = false });
-            data.Add(new TrailBurger() { Bun = false });
             this.DataContext = data;
         }
 

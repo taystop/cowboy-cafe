@@ -29,15 +29,15 @@
                             
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="500"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 
-                                <TextBlock Text="{Binding}" FontWeight="Bold" HorizontalAlignment="Left" FontFamily="Onyx" TextAlignment="Left" FontSize="25" Grid.Column="0"/>
-                                <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize="25" FontFamily="Onyx" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Bold" Grid.Column="1"/>
+                                <TextBlock Text="{Binding}" FontWeight="Bold" HorizontalAlignment="Left" FontFamily="Onyx" TextAlignment="Left" FontSize="30" Grid.Column="0"/>
+                                <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize="30" FontFamily="Onyx" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Bold" Grid.Column="1"/>
                             </Grid>
                             
-                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="10" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="15" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
