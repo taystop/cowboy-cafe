@@ -35,5 +35,14 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
         }
+        private void SelectMenuItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
+        }
+
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
+        }
     }
 }
