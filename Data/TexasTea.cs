@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,8 +13,27 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The TexasTea drink class.
     /// </summary>
-    public class TexasTea: Drink
+    public class TexasTea: Drink, INotifyPropertyChanged 
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// The Size of the Tea
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+
+
         /// <summary>
         /// If tea is sweet.
         /// </summary>
@@ -24,6 +44,8 @@ namespace CowboyCafe.Data
             set
             {
                 sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -37,6 +59,8 @@ namespace CowboyCafe.Data
             set
             {
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -50,6 +74,8 @@ namespace CowboyCafe.Data
             set
             {
                 lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

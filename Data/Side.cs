@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -15,6 +16,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side: IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Gets the size of the entree
         /// </summary>

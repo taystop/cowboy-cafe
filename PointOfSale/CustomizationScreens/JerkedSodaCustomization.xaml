@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="40">Customize this Soda</TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Path=Ice}"/>
+            <TextBlock Text="Ice" FontSize="30"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="BirchBeerButton" Content="Birch Beer" FontSize="30" Click="BirchBeerButton_Click"/>
+            <Button x:Name="CreamSodaButton" Content="Cream Soda" FontSize="30" Click="CreamSodaButton_Click"/>
+            <Button x:Name="OrangeSodaButton" Content="Orange Soda" FontSize="30" Click="OrangeSodaButton_Click"/>
+            <Button x:Name="RootBeerButton" Content="Root Beer" FontSize="30" Click="RootBeerButton_Click"/>
+            <Button x:Name="SarsparillaButton" Content="Sarsparilla" FontSize="30" Click="SarsparillaButton_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button x:Name="SmallButton" Content="Small" FontSize="30" Click="SmallButton_Click"/>
+            <Button x:Name="MediumButton" Content="Medium" FontSize="30" Click="MediumButton_Click"/>
+            <Button x:Name="LargeButton" Content="Large" FontSize="30" Click="LargeButton_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
