@@ -30,10 +30,11 @@ namespace PointOfSale
         {
             var item = new AngryChicken();
             var orderControl = this.FindAncestor<OrderControl>();
-            var screen = new AngryChickenCustomization();
-            screen.DataContext = item;
+
             if (DataContext is Order data)
             {
+                var screen = new AngryChickenCustomization();
+                screen.DataContext = item;
                 data.Add(item);
                 orderControl?.SwapScreen(screen);
             }
@@ -121,10 +122,11 @@ namespace PointOfSale
         {
             var item = new BakedBeans();
             var orderControl = this.FindAncestor<OrderControl>();
-            var screen = new BakedBeansCustomization();
-            screen.DataContext = item;
+            
             if (DataContext is Order data)
             {
+                var screen = new BakedBeansCustomization(data);
+                screen.DataContext = item;
                 data.Add(item);
                 orderControl?.SwapScreen(screen);
             }

@@ -27,7 +27,15 @@ namespace CowboyCafe.Data
         /// The running total price of all items.
         /// </summary>
         private double subtotal = 0;
-        public double Subtotal => subtotal;
+        public double Subtotal
+        {
+            private set { }
+            get
+            {
+                return subtotal;
+            }
+        }
+
 
         /// <summary>
         /// The number of the order.
@@ -85,8 +93,27 @@ namespace CowboyCafe.Data
         private void OnItemChanged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            if(e.PropertyName == "Price")
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        /// <summary>
+        /// Inspired by Zachary's order helper function, helps change the subtotal
+        /// </summary>
+        /// <param name="item">item who has a size change.</param>
+        public void SubHelp(IOrderItem item, Size size)
+        {
+            Subtotal -= item.Price;
+            if(item is Side sid)
+            {
+                sid.Size = size;
+                Subtotal += sid.Price;
+            }
+            if(item is Drink drin)
+            {
+                drin.Size = size;
+                Subtotal += drin.Price;
+            }
         }
     }
 }

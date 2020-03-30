@@ -19,8 +19,10 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class BakedBeansCustomization : UserControl
     {
-        public BakedBeansCustomization()
+        private Order or;
+        public BakedBeansCustomization(object d)
         {
+            or = (Order)d;
             InitializeComponent();
         }
 
@@ -28,7 +30,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if(DataContext is BakedBeans item)
             {
-                item.Size = CowboyCafe.Data.Size.Small;
+                or.SubHelp(item, CowboyCafe.Data.Size.Small);
             }
         }
 
@@ -36,7 +38,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is BakedBeans item)
             {
-                item.Size = CowboyCafe.Data.Size.Medium;
+                or.SubHelp(item, CowboyCafe.Data.Size.Medium);
             }
         }
 
@@ -44,7 +46,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is BakedBeans item)
             {
-                item.Size = CowboyCafe.Data.Size.Large;
+                or.SubHelp(item, CowboyCafe.Data.Size.Large);
             }
         }
     }

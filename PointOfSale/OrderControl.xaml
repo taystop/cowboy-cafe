@@ -6,34 +6,6 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="FontSize" Value="27"/>
-            <Setter Property="Margin" Value="8"/>
-            <Setter Property="FontFamily" Value="Playbill"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name ="border" CornerRadius="20" Background="#743d20" BorderThickness="2" Padding=".5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border"  Property="BorderBrush" Value="Blue"/>
-                                <Setter Property="Foreground" Value="Blue"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="Blue"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Resources>
 
     <Grid x:Name="OrderControlGrid" Background="#cb7121" >
         <Grid.ColumnDefinitions>
@@ -51,6 +23,34 @@
             </Grid.RowDefinitions>
             <local:OrderSummaryControl x:Name="OrderSummaryControl"/>
             <Grid Grid.Row="1">
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="FontSize" Value="27"/>
+                        <Setter Property="Margin" Value="8"/>
+                        <Setter Property="FontFamily" Value="Playbill"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name ="border" CornerRadius="20" Background="#743d20" BorderThickness="2" Padding=".5">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border"  Property="BorderBrush" Value="Blue"/>
+                                            <Setter Property="Foreground" Value="Blue"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter Property="Background" TargetName="border" Value="Blue"/>
+                                            <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

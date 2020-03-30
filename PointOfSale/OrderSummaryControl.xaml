@@ -18,8 +18,8 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Height="50" Width="100" Foreground="#471c1c" FontWeight="Bold" FontSize="40" FontFamily="Onyx" 
                        HorizontalAlignment="Left" Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}"/>
-            <ListView x:Name="OrderItemsSummary" ItemsSource="{Binding Path=Items}" Grid.Row="1" Background="#cb7121" BorderThickness="0">
-                <ListView.ItemTemplate>
+            <ListBox x:Name="OrderSum" ItemsSource="{Binding Path=Items}" SelectionChanged="ChangedSelect" Grid.Row="1" Background="#cb7121" BorderThickness="0">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -29,19 +29,21 @@
                             
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="400"/>
-                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 
                                 <TextBlock Text="{Binding}" FontWeight="Bold" HorizontalAlignment="Left" FontFamily="Onyx" TextAlignment="Left" FontSize="30" Grid.Column="0"/>
                                 <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize="30" FontFamily="Onyx" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Bold" Grid.Column="1"/>
+                                <Button x:Name="RemoveButton" Content="X" FontWeight="Bold" FontSize="30" Grid.Column="2" Click="Removeitem"/>
                             </Grid>
                             
-                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="15" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="30" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
 
         <Grid x:Name="SubtotalBox" Grid.Row="1" Height="60">
