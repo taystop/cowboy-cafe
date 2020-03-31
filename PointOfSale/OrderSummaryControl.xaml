@@ -36,7 +36,7 @@
                                 
                                 <TextBlock Text="{Binding}" FontWeight="Bold" HorizontalAlignment="Left" FontFamily="Onyx" TextAlignment="Left" FontSize="30" Grid.Column="0"/>
                                 <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize="30" FontFamily="Onyx" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Bold" Grid.Column="1"/>
-                                <Button x:Name="RemoveButton" Content="X" FontWeight="Bold" FontSize="30" Grid.Column="2" Click="Removeitem"/>
+                                <Button x:Name="RemoveButton" Content="X" FontWeight="Bold" Background="Red" FontSize="30" Grid.Column="2" Click="Removeitem"/>
                             </Grid>
                             
                             <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="30" HorizontalAlignment="Center" BorderThickness="0" Background="#cb7121" Grid.Row="1"/>
