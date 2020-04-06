@@ -19,8 +19,10 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class JerkedSodaCustomization : UserControl
     {
-        public JerkedSodaCustomization()
+        private Order or;
+        public JerkedSodaCustomization(Order order)
         {
+            or = order;
             InitializeComponent();
         }
 
@@ -68,7 +70,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if(DataContext is JerkedSoda item)
             {
-                item.Size = CowboyCafe.Data.Size.Small;
+                or.SubHelp(item, CowboyCafe.Data.Size.Small);
             }
         }
 
@@ -76,7 +78,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if(DataContext is JerkedSoda item)
             {
-                item.Size = CowboyCafe.Data.Size.Medium;
+                or.SubHelp(item, CowboyCafe.Data.Size.Medium);
             }
         }
 
@@ -84,7 +86,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is JerkedSoda item)
             {
-                item.Size = CowboyCafe.Data.Size.Large;
+                or.SubHelp(item, CowboyCafe.Data.Size.Large);
             }
         }
     }

@@ -19,8 +19,10 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class PanDeCampoCustomization : UserControl
     {
-        public PanDeCampoCustomization()
+        private Order or;
+        public PanDeCampoCustomization(Order order)
         {
+            or = order;
             InitializeComponent();
         }
 
@@ -28,7 +30,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is PanDeCampo item)
             {
-                item.Size = CowboyCafe.Data.Size.Small;
+                or.SubHelp(item, CowboyCafe.Data.Size.Small);
             }
         }
 
@@ -36,7 +38,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is PanDeCampo item)
             {
-                item.Size = CowboyCafe.Data.Size.Medium;
+                or.SubHelp(item, CowboyCafe.Data.Size.Medium);
             }
         }
 
@@ -44,7 +46,7 @@ namespace PointOfSale.CustomizationScreens
         {
             if (DataContext is PanDeCampo item)
             {
-                item.Size = CowboyCafe.Data.Size.Large;
+                or.SubHelp(item, CowboyCafe.Data.Size.Large);
             }
         }
     }

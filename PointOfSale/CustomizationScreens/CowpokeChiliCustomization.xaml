@@ -9,19 +9,19 @@
     <StackPanel>
         <TextBlock FontSize="40">Customize this Chili</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Width="39"/>
             <TextBlock Text="Cheese" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=SourCream}"/>
+            <CheckBox IsChecked="{Binding Path=SourCream}" Width="39"/>
             <TextBlock Text="Sour Cream" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}" Width="39"/>
             <TextBlock Text="Green Onions" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}"/>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Width="39"/>
             <TextBlock Text="Tortilla Strips" FontSize="30"/>
         </StackPanel>
     </StackPanel>

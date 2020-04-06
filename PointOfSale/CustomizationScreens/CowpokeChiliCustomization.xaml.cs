@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale.CustomizationScreens
 {
@@ -18,8 +19,10 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class CowpokeChiliCustomization : UserControl
     {
-        public CowpokeChiliCustomization()
+        private Order or;
+        public CowpokeChiliCustomization(Order order)
         {
+            or = order;
             InitializeComponent();
         }
     }

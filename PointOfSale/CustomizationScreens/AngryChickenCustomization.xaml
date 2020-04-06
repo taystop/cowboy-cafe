@@ -9,11 +9,11 @@
     <StackPanel>
         <TextBlock FontSize="50">Customize this Chicken</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Bread}"/>
+            <CheckBox IsChecked="{Binding Path=Bread}" FontWeight="Normal" Width="39" />
             <TextBlock Text="Bread" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Pickle}"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Width="41"/>
             <TextBlock Text="Pickle" FontSize="30"/>
         </StackPanel>
     </StackPanel>

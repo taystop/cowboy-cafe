@@ -44,25 +44,25 @@ namespace PointOfSale
             }
             if(item is ChiliCheeseFries)
             {
-                var screen = new ChiliCheeseFriesCustomization();
+                var screen = new ChiliCheeseFriesCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
             if(item is CornDodgers)
             {
-                var screen = new CornDodgersCustomization();
+                var screen = new CornDodgersCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
             if(item is CowboyCoffee)
             {
-                var screen = new CowboyCoffeeCustomization();
+                var screen = new CowboyCoffeeCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
             if(item is CowpokeChili)
             {
-                var screen = new CowpokeChiliCustomization();
+                var screen = new CowpokeChiliCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
@@ -74,13 +74,13 @@ namespace PointOfSale
             }
             if(item is JerkedSoda)
             {
-                var screen = new JerkedSodaCustomization();
+                var screen = new JerkedSodaCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
             if(item is PanDeCampo)
             {
-                var screen = new PanDeCampoCustomization();
+                var screen = new PanDeCampoCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
@@ -98,7 +98,7 @@ namespace PointOfSale
             }
             if(item is TexasTea)
             {
-                var screen = new TexasTeaCustomization();
+                var screen = new TexasTeaCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }
@@ -116,7 +116,7 @@ namespace PointOfSale
             }
             if(item is Water)
             {
-                var screen = new WaterCustomization();
+                var screen = new WaterCustomization((Order)DataContext);
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }

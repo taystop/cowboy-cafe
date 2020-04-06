@@ -15,11 +15,11 @@
         <TextBlock FontSize="40">Customize this Water</TextBlock>
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Path=Ice}"/>
+                <CheckBox IsChecked="{Binding Path=Ice}" Width="39"/>
                 <TextBlock Text="Ice" FontSize="30"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Path=Lemon}"/>
+            <StackPanel Orientation="Horizontal" >
+                <CheckBox IsChecked="{Binding Path=Lemon}" Width="39"/>
                 <TextBlock Text="Lemon" FontSize="30"/>
             </StackPanel>
         </StackPanel>

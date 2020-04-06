@@ -103,17 +103,18 @@ namespace CowboyCafe.Data
         /// <param name="item">item who has a size change.</param>
         public void SubHelp(IOrderItem item, Size size)
         {
-            Subtotal -= item.Price;
+            subtotal -= item.Price;
             if(item is Side sid)
             {
                 sid.Size = size;
-                Subtotal += sid.Price;
+                subtotal += sid.Price;
             }
             if(item is Drink drin)
             {
                 drin.Size = size;
-                Subtotal += drin.Price;
+                subtotal += drin.Price;
             }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }

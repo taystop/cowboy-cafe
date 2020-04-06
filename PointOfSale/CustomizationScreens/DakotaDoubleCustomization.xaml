@@ -9,35 +9,35 @@
     <StackPanel>
         <TextBlock FontSize="40">Customize this Burger</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Bun}"/>
+            <CheckBox IsChecked="{Binding Path=Bun}" Width="39"/>
             <TextBlock Text="Bun" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Ketchup}"/>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" Width="39"/>
             <TextBlock Text="Ketchup" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Mustard}"/>
+            <CheckBox IsChecked="{Binding Path=Mustard}" Width="39"/>
             <TextBlock Text="Mustard" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Pickle}"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Width="39"/>
             <TextBlock Text="Pickles" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Width="39"/>
             <TextBlock Text="Cheese" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Tomato}"/>
+            <CheckBox IsChecked="{Binding Path=Tomato}" Width="39"/>
             <TextBlock Text="Tomato" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Lettuce}"/>
+            <CheckBox IsChecked="{Binding Path=Lettuce}" Width="39"/>
             <TextBlock Text="Lettuce" FontSize="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Mayo}"/>
+            <CheckBox IsChecked="{Binding Path=Mayo}" Width="39"/>
             <TextBlock Text="Mayo" FontSize="30"/>
         </StackPanel>
     </StackPanel>
