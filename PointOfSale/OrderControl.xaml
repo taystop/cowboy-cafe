@@ -6,12 +6,13 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
-
+    
     <Grid x:Name="OrderControlGrid" Background="#cb7121" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width=".5*"/>
         </Grid.ColumnDefinitions>
+
         <Border x:Name="Container" Grid.Column="0">
             <local:MenuItemSelectionControl/>
         </Border>

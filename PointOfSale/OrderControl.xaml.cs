@@ -34,7 +34,7 @@ namespace PointOfSale
 
         private void CompleteOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            this.Content = new TransactionControl((Order)this.DataContext);
         }
         private void SelectMenuItemBtn_Click(object sender, RoutedEventArgs e)
         {
