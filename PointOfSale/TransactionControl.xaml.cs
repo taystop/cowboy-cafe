@@ -48,9 +48,9 @@ namespace PointOfSale
             {
                 var pr = new ReceiptPrinter();
                 DateTime date = DateTime.Now;
-                string rec = ("Order: " + or.OrderNumber + " " + date.ToString() + " " + ReceiptHelper(or) + "Subtotal: " + or.Subtotal.ToString("C") + " Total: " + ((or.Subtotal * 0.16 + or.Subtotal).ToString("C")) + " Credit");
-                if (rec.Length <= 60)
-                    pr.Print(rec);
+                string rec = ("Order: " + or.OrderNumber + " " + date.ToString() + " " + ReceiptHelper(or) + "Subtotal: " + or.Subtotal.ToString("C") + 
+                    " Total: " + ((or.Subtotal * 0.16 + or.Subtotal).ToString("C")) + " Credit");
+                pr.Print(rec);
                 var wind = this.FindAncestor<MainWindow>();
                 wind.Content = new OrderControl();
             }
