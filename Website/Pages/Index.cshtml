@@ -1,10 +1,63 @@
 ﻿@page
+@using CowboyCafe.Data;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome to the Cowboy Cafe!</h1>
+        <h5>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+        </h5>
+        <h2>Entrees</h2>
+        @foreach (IOrderItem item in Menu.Entrees())
+        {
+            <div class="menu-item">
+                <h5>@item.ToString()</h5>
+                <h5>@item.Price.ToString("C")</h5>
+                <h5>@item.Calories</h5>
+            </div>
+        }
+        <h2>Sides</h2>
+        @foreach (IOrderItem item in Menu.Sides())
+        {
+        <div class="menu-item">
+        @if (item is Side d)
+        {
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+            d.Size = Size.Medium;
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+            d.Size = Size.Large;
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+        }
+    </div>
+        }
+        <h2>Drinks</h2>
+        @foreach (IOrderItem item in Menu.Drinks())
+        {
+        <div class="menu-item">
+        @if (item is Drink d)
+        {
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+            d.Size = Size.Medium;
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+            d.Size = Size.Large;
+            <h5>@d.ToString()</h5>
+            <h5>@d.Price.ToString("C")</h5>
+            <h5>@d.Calories</h5>
+        }
+    </div>
+        }
+    </div>
