@@ -5,59 +5,102 @@
     ViewData["Title"] = "Home page";
 }
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome to the Cowboy Cafe!</h1>
-        <h5>
-            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
-            Dip your Pan de Campo into a bowl of beans. Or conquer the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
-        </h5>
-        <h2>Entrees</h2>
-        @foreach (IOrderItem item in Menu.Entrees())
-        {
-            <div class="menu-item">
-                <h5>@item.ToString()</h5>
-                <h5>@item.Price.ToString("C")</h5>
-                <h5>@item.Calories</h5>
+    <form id="Menu-Database">
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
+
+        <div id="Filters">
+            <h4>Item Type</h4>
+            @foreach (String type in Menu.ItemType)
+            {
+                <label>
+                    <input type="checkbox" name="ItemType" value="@type" checked="@Model.ItemType?.Contains(type)" />
+                    @type
+                </label>
+            }
+
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="2000" step="1" placeholder="min" value="@Model.CaloriesMin"/>
+                and
+                <input name="CaloriesMax" type="number" min="0" max="2000" step="1" placeholder="max" value="@Model.CaloriesMax"/>
             </div>
-        }
-        <h2>Sides</h2>
-        @foreach (IOrderItem item in Menu.Sides())
-        {
-        <div class="menu-item">
-        @if (item is Side d)
-        {
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-            d.Size = Size.Medium;
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-            d.Size = Size.Large;
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-        }
-    </div>
-        }
-        <h2>Drinks</h2>
-        @foreach (IOrderItem item in Menu.Drinks())
-        {
-        <div class="menu-item">
-        @if (item is Drink d)
-        {
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-            d.Size = Size.Medium;
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-            d.Size = Size.Large;
-            <h5>@d.ToString()</h5>
-            <h5>@d.Price.ToString("C")</h5>
-            <h5>@d.Calories</h5>
-        }
-    </div>
-        }
-    </div>
+
+            <h4>Price</h4>
+            <div>
+                Between
+                <input name="PriceMin" type="number" min="0" max="10" step=".1" placeholder="min" value="@Model.PriceMin"/>
+                and
+                <input name="PriceMax" type="number" min="0" max="10" step=".1" placeholder="max" value="@Model.PriceMax"/>
+            </div>
+        </div>
+
+
+        <div class="text-center">
+            <h1 class="display-4">Welcome to the Cowboy Cafe!</h1>
+            <h5>
+                We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+                Dip your Pan de Campo into a bowl of beans. Or conquer the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+            </h5>
+
+            <h2>Menu</h2>
+            <ul class="Menu-list">
+                @foreach (IOrderItem item in @Model.MenuItems)
+                {
+                    <li class="menu-item">
+                        @if (item is Side s)
+                        {
+                            s.Size = Size.Small;
+                        <div>
+                            <h5>@s.ToString()</h5>
+                            <h5>@s.Price.ToString("C")</h5>
+                            <h5>@s.Calories</h5>
+                        </div>
+                            s.Size = Size.Medium;
+                    <div>
+                        <h5>@s.ToString()</h5>
+                        <h5>@s.Price.ToString("C")</h5>
+                        <h5>@s.Calories</h5>
+                    </div>
+                            s.Size = Size.Large;
+                    <div>
+                        <h5>@s.ToString()</h5>
+                        <h5>@s.Price.ToString("C")</h5>
+                        <h5>@s.Calories</h5>
+                    </div>
+                        }
+                        @if (item is Drink d)
+                        {
+                            d.Size = Size.Small;
+                    <div>
+                        <h5>@d.ToString()</h5>
+                        <h5>@d.Price.ToString("C")</h5>
+                        <h5>@d.Calories</h5>
+                    </div>
+                            d.Size = Size.Medium;
+                    <div>
+                        <h5>@d.ToString()</h5>
+                        <h5>@d.Price.ToString("C")</h5>
+                        <h5>@d.Calories</h5>
+                    </div>
+                            d.Size = Size.Large;
+                    <div>
+                        <h5>@d.ToString()</h5>
+                        <h5>@d.Price.ToString("C")</h5>
+                        <h5>@d.Calories</h5>
+                    </div>
+                        }
+                        @if (item is Entree e)
+                        {
+                            <h5>@e.ToString()</h5>
+                            <h5>@e.Price.ToString("C")</h5>
+                            <h5>@e.Calories</h5>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </form>

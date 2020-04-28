@@ -13,6 +13,8 @@ namespace CowboyCafe.DataTests
         {
             public double Price { get; set; } 
 
+            public uint Calories { get; set; }
+
             public List<string> SpecialInstructions { get; set; }
 
             public event PropertyChangedEventHandler PropertyChanged;

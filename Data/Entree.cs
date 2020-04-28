@@ -16,6 +16,7 @@ namespace CowboyCafe.Data
     public abstract class Entree: IOrderItem
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
